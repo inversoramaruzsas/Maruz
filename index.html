@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Urbanización Pentecostés · Visor Interactivo de Lotes & Cotizador | Inversora Maruz S.A.S.</title>
+  <meta name="description" content="Explora en tiempo real los 839 lotes sobre terreno real de Urbanización Pentecostés en San Rafael de Morichal (Yopal, Casanare). Polígonos interactivos, disponibilidad actualizada y calculadora financiera sin intereses de Inversora Maruz S.A.S." />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <meta property="og:title" content="Urbanización Pentecostés · Inversora Maruz S.A.S." />
+  <meta property="og:description" content="Plano interactivo de 839 lotes sobre terreno real y calculadora de financiación." />
+  <meta property="og:image" content="assets/logo-maruz-inversora.jpg" />
+  <meta name="theme-color" content="#1a284d" />
+  <link rel="stylesheet" href="assets/fonts.css" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="stylesheet" href="assets/theme-editorial.css" />
+</head>
+<body>
+  <noscript><style>.intro-overlay{display:none!important}</style></noscript>
+  <div id="introOverlay" class="intro-overlay" aria-hidden="true">
+    <video id="introVideo" class="intro-video" src="assets/media/maruz-intro.mp4" autoplay playsinline preload="auto" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback"></video>
+    <button type="button" id="introSound" class="intro-sound hidden">🔊 Activar sonido</button>
+  </div>
+  <script src="assets/intro.js"></script>
+<!-- Top Institutional Ribbon -->
+  <div class="top-ribbon no-print">
+    <div class="container ribbon-inner">
+      <div class="ribbon-left">
+        <img src="assets/logo-maruz-white.png" alt="Maruz Inversora" class="maruz-logo-ribbon" />
+        <span><strong>Inversora Maruz S.A.S.</strong> · 21 proyectos en Casanare</span>
+      </div>
+      <div class="ribbon-right">
+        <span id="ribbonOffice">San Rafael de Morichal · Casanare</span>
+        <span class="ribbon-sep">|</span>
+        <a id="ribbonWa" href="#" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Header -->
+  <header class="site-header no-print" id="top">
+    <div class="container header-inner">
+      <a href="#top" class="brand-link">
+        <img src="assets/logo-pentecostes.png" alt="Logo Urbanización Pentecostés" class="brand-logo" /><span class="brand-sep"></span><img src="assets/logo-maruz-navy.png" alt="Maruz Inversora" class="maruz-logo-header" />
+        <div class="brand-text">
+          <span class="brand-eyebrow">INVERSORA MARUZ S.A.S.</span>
+          <span class="brand-title">Urbanización Pentecostés</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="#visor-mapa" class="nav-link active">Plano Interactivo</a>
+        <a href="#calculadora" class="nav-link">Calculadora Everia</a>
+        <a href="#manzanas-resumen" class="nav-link">Manzanas &amp; Inventario</a>
+        <a href="#ecosistema-maruz" class="nav-link">Proyectos Maruz</a>
+        <a href="#ubicacion-gps" class="nav-link">Ubicación Real</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="assets/plano-original-pentecostes.pdf" download class="btn btn-ghost btn-sm" title="Descargar Plano PDF Oficial">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span>Plano PDF</span>
+        </a>
+        <a href="#visor-mapa" class="btn btn-primary btn-sm">
+          <span>Elegir Lote</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section no-print">
+    <div class="hero-bg-glow"></div>
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badges">
+          <span class="pill pill-emerald">✨ Financiación Directa · 0% Interés</span>
+          <span class="pill pill-teal">📍 Vereda San Rafael de Morichal · Yopal</span>
+        </div>
+        <h1 class="hero-heading">
+          Tu terreno propio sobre <span class="text-gradient">plano real interactivo</span> en Pentecostés
+        </h1>
+        <p class="hero-lead">
+          Explora lote por lote sobre la ortofoto aérea real del proyecto. Selecciona cualquier polígono para conocer al instante su área exacta, estado en tiempo real y simular tu plan de pagos a medida sin intereses con el respaldo de <strong>Inversora Maruz S.A.S.</strong>
+        </p>
+
+        <div class="hero-pricing-cards">
+          <div class="pricing-highlight-card card-contado">
+            <span class="ph-tag">Pago de Contado · Lote Tipo 90 m²</span>
+            <div class="ph-price">$25.000.000 <small>COP</small></div>
+            <span class="ph-sub">Ahorras <strong>$5.000.000</strong> ($277.778 / m²)</span>
+          </div>
+          <div class="pricing-highlight-card card-financiado">
+            <span class="ph-tag">Financiado sin Intereses · Lote Tipo 90 m²</span>
+            <div class="ph-price">$30.000.000 <small>COP</small></div>
+            <span class="ph-sub">Inicial <strong>$10.000.000</strong> + Cuotas fijas de <strong>$350.000/mes</strong></span>
+          </div>
+        </div>
+
+        <div class="hero-cta-row">
+          <a href="#visor-mapa" class="btn btn-primary btn-lg">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+            <span>Abrir Visor de Polígonos</span>
+          </a>
+          <a href="#calculadora" class="btn btn-outline btn-lg">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="8" y2="10.01"/><line x1="12" y1="10" x2="12" y2="10.01"/><line x1="16" y1="10" x2="16" y2="10.01"/><line x1="8" y1="14" x2="8" y2="14.01"/><line x1="12" y1="14" x2="12" y2="14.01"/><line x1="16" y1="14" x2="16" y2="14.01"/><line x1="8" y1="18" x2="16" y2="18"/></svg>
+            <span>Simular Financiación</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-stats-panel">
+        <div class="hero-brand-card">
+          <div class="hbc-header">
+            <img src="assets/logo-pentecostes.png" alt="Pentecostés Urbanización" class="hbc-logo" />
+            <div>
+              <span class="hbc-kicker">CONSOLIDACIÓN REAL COMPROBADA</span>
+              <h3>Estado del Inventario en Vivo</h3>
+            </div>
+          </div>
+          <div class="progress-consolidation">
+            <div class="pc-labels">
+              <span>Consolidación Comercial del Proyecto</span>
+              <strong id="heroSoldPct">82,8% Vendido</strong>
+            </div>
+            <div class="pc-bar">
+              <div class="pc-fill-sold" id="heroBarSold" style="width: 82.8%"></div>
+              <div class="pc-fill-proc" id="heroBarProc" style="width: 3.0%"></div>
+              <div class="pc-fill-avail" id="heroBarAvail" style="width: 14.2%"></div>
+            </div>
+          </div>
+          <div class="kpi-mini-grid">
+            <div class="kpi-mini">
+              <span class="kpi-num" id="kpiTotalLots">839</span>
+              <span class="kpi-lbl">Polígonos Totales (28 Mz + 17 SL)</span>
+            </div>
+            <div class="kpi-mini kpi-red">
+              <span class="kpi-num" id="kpiSoldLots">695</span>
+              <span class="kpi-lbl">Lotes Vendidos (En Rojo)</span>
+            </div>
+            <div class="kpi-mini kpi-green">
+              <span class="kpi-num" id="kpiAvailLots">119</span>
+              <span class="kpi-lbl">Unidades para Cotizar</span>
+            </div>
+            <div class="kpi-mini kpi-amber">
+              <span class="kpi-num" id="kpiProcLots">25</span>
+              <span class="kpi-lbl">Separados / En Trámite</span>
+            </div>
+          </div>
+          <div class="hbc-footer">
+            <span>Cifras calculadas desde el inventario Excel y el plano PDF del proyecto. Estados y valores sujetos a validación comercial.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       INTERACTIVE POLYGON MASTERPLAN VIEWER OVER REAL TERRAIN
+  ====================================================================== -->
+  <section class="viewer-section no-print" id="visor-mapa">
+    <div class="container viewer-header-bar">
+      <div>
+        <span class="section-kicker">VISOR GEORREFERENCIADO SOBRE TERRENO REAL</span>
+        <h2 class="section-title">Plano Maestro Interactivo · Urbanización Pentecostés</h2>
+      </div>
+      <div class="viewer-mode-controls">
+        <div class="segmented-control" role="tablist" aria-label="Modo de visualización de estados">
+          <button type="button" class="seg-btn active" data-view-mode="comercial" id="btnModeComercial">
+            Vista Comercial
+          </button>
+          <button type="button" class="seg-btn" data-view-mode="auditoria" id="btnModeAuditoria">
+            Auditoría Excel
+          </button>
+        </div>
+        <button type="button" class="btn btn-emerald-glow btn-sm" id="btnPulseAvailable" title="Destacar lotes disponibles sobre el terreno">
+          <span>✨ Destacar Disponibles</span>
+        </button>
+        <button type="button" class="btn btn-ghost btn-sm" id="btnFullscreenMap" title="Pantalla Completa">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+          <span>Pantalla Completa</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Interactive Map Workspace -->
+    <div class="container viewer-shell-wrap">
+      <div class="viewer-shell" id="viewerShell">
+        <!-- Top Filter & Search HUD inside Map -->
+        <div class="map-top-hud">
+          <div class="hud-search-group">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" id="mapSearchInput" placeholder="Ir a lote (ej: 1-17, 14-31, SL-03)..." autocomplete="off" />
+            <button type="button" id="btnMapSearchGo" class="hud-go-btn">Ir</button>
+          </div>
+
+          <select id="filterManzanaSelect" class="hud-select" aria-label="Filtrar o volar a Manzana">
+            <option value="ALL">Todas las Manzanas (1–28 + SL)</option>
+          </select>
+
+          <select id="filterStatusSelect" class="hud-select" aria-label="Filtrar por estado">
+            <option value="ALL">Todos los Estados (839)</option>
+            <option value="COTIZABLES">🟢 Disponibles + Liberados (119)</option>
+            <option value="DISPONIBLE">✨ Disponibles Inmediatos (24)</option>
+            <option value="LIBERADO">🔄 Liberados Cláusula / Devolución (95)</option>
+            <option value="PROCESO">🟡 Separados / Cesión / Pendiente (25)</option>
+            <option value="VENDIDO">🔴 Vendidos (695)</option>
+          </select>
+
+          <select id="filterAreaSelect" class="hud-select" aria-label="Filtrar por área">
+            <option value="ALL">Todas las Áreas (m²)</option>
+            <option value="90">Lote Estándar (90 m²)</option>
+            <option value="91-170">Esquineros / Especiales (91–168 m²)</option>
+            <option value="SUPER">Super Lotes (715–1.470 m²)</option>
+          </select>
+
+          <div class="hud-opacity-ctrl" title="Ajustar transparencia de los polígonos para apreciar el terreno real">
+            <label for="polyOpacityRange">Polígonos</label>
+            <input type="range" id="polyOpacityRange" min="10" max="90" value="58" />
+          </div>
+        </div>
+
+        <!-- Map Canvas Viewport (Etapa 2: Hybrid 60/120 FPS LOD Pyramid + Spatial R-Tree + Semantic SVG) -->
+        <div class="map-viewport" id="mapViewport">
+          <canvas id="terrainHybridCanvas" class="hybrid-map-canvas"></canvas>
+          <svg id="masterplanSvg" class="semantic-polygons-svg" viewBox="1220 1820 6150 8750" preserveAspectRatio="none" aria-label="Plano interactivo de lotes Urbanización Pentecostés"></svg>
+
+          <!-- Interactive Radar Minimap -->
+          <div class="minimap-box" title="Minimapa Radar Interactivo · Haz clic o arrastra para desplazarte">
+            <canvas id="minimapCanvas" width="116" height="164"></canvas>
+          </div>
+
+          <!-- Real-Time Render Telemetry Pill -->
+          <div class="perf-telemetry-pill" id="perfTelemetryPill">60 FPS · 0.4ms · 1.0× · LOD-1</div>
+
+          <!-- Floating Zoom & Reset Controls -->
+          <div class="map-zoom-controls">
+            <button type="button" class="zoom-btn" id="btnZoomIn" title="Acercar (+)">+</button>
+            <button type="button" class="zoom-btn" id="btnZoomOut" title="Alejar (−)">−</button>
+            <button type="button" class="zoom-btn" id="btnZoomReset" title="Encuadrar todo el proyecto">⟲</button>
+          </div>
+
+          <!-- Floating Interactive Legend -->
+          <div class="map-legend" id="mapLegend">
+            <div class="legend-title">Leyenda del Plano (Clic para filtrar)</div>
+            <div class="legend-items" id="legendItemsContainer">
+              <!-- Populated dynamically based on View Mode -->
+            </div>
+          </div>
+
+          <!-- Floating Multi-Lot Cart Pill -->
+          <div class="multi-cart-bar hidden" id="multiCartBar">
+            <div class="mcb-info">
+              <span class="mcb-badge" id="cartCountBadge">0</span>
+              <span id="cartSummaryText">Lotes en cotización múltiple</span>
+            </div>
+            <div class="mcb-actions">
+              <button type="button" class="btn btn-primary btn-xs" id="btnSendCartToCalc">Calcular Juntos</button>
+              <button type="button" class="btn btn-ghost btn-xs" id="btnClearCart">Limpiar</button>
+            </div>
+          </div>
+
+          <!-- Hover Floating Tooltip -->
+          <div class="lot-tooltip hidden" id="lotTooltip"></div>
+        </div>
+
+        <!-- Right-Side Interactive Lot Inspector Panel (Everia + Montañita View Style) -->
+        <aside class="lot-inspector" id="lotInspector">
+          <!-- Empty / Welcome State -->
+          <div class="inspector-empty" id="inspectorEmpty">
+            <div class="ie-icon">🗺️</div>
+            <h3>Selecciona un Polígono en el Terreno</h3>
+            <p>Haz clic sobre cualquiera de los <strong>839 lotes</strong> del plano real para inspeccionar sus atributos, estado comercial, dimensiones y cálculo automático de precio por área.</p>
+            <div class="quick-picks">
+              <span class="qp-label">Sugerencias disponibles inmediatas:</span>
+              <div class="qp-chips" id="quickAvailableChips"></div>
+            </div>
+          </div>
+
+          <!-- Active Lot Detail Card -->
+          <div class="inspector-detail hidden" id="inspectorDetail">
+            <div class="id-top-row">
+              <div>
+                <span class="id-code" id="inspCode">MZ01-L17</span>
+                <h3 class="id-title" id="inspTitle">Manzana 1 · Lote 17</h3>
+              </div>
+              <span class="status-pill" id="inspStatusPill">Disponible</span>
+            </div>
+
+            <div class="id-attributes-grid">
+              <div class="attr-box">
+                <span class="attr-lbl">Área Exacta</span>
+                <strong class="attr-val" id="inspArea">90 m²</strong>
+              </div>
+              <div class="attr-box">
+                <span class="attr-lbl">Tipología</span>
+                <strong class="attr-val" id="inspDims">6m × 15m</strong>
+              </div>
+              <div class="attr-box">
+                <span class="attr-lbl">Valor m² Contado</span>
+                <strong class="attr-val" id="inspM2Contado">$277.778</strong>
+              </div>
+              <div class="attr-box">
+                <span class="attr-lbl">Estado Inventario</span>
+                <strong class="attr-val" id="inspRawStatus">Disponible</strong>
+              </div>
+            </div>
+
+            <!-- Automatic Area-Based Price Comparison -->
+            <div class="id-pricing-panel">
+              <div class="ipp-option ipp-contado">
+                <div class="ipp-head">
+                  <span>💎 Pago de Contado</span>
+                  <span class="ipp-save" id="inspSaveTag">Ahorras $5.000.000</span>
+                </div>
+                <div class="ipp-amount" id="inspPriceContado">$25.000.000</div>
+                <div class="ipp-note">Escritura cuota parte · Descuento directo aplicado</div>
+              </div>
+
+              <div class="ipp-option ipp-financiado">
+                <div class="ipp-head">
+                  <span>📅 Precio Financiado (0% Interés)</span>
+                  <span class="ipp-rate">$333.333 / m²</span>
+                </div>
+                <div class="ipp-amount" id="inspPriceFinanciado">$30.000.000</div>
+                <div class="ipp-breakdown">
+                  <div class="ipp-row">
+                    <span>Cuota Inicial Base:</span>
+                    <strong id="inspInicial">$10.000.000</strong>
+                  </div>
+                  <div class="ipp-row">
+                    <span>Saldo a Financiar:</span>
+                    <strong id="inspSaldo">$20.000.000</strong>
+                  </div>
+                  <div class="ipp-row">
+                    <span>Cuota Fija Mensual:</span>
+                    <strong class="text-emerald" id="inspCuota">$350.000 / mes</strong>
+                  </div>
+                  <div class="ipp-row">
+                    <span>Plazo Estimado:</span>
+                    <strong id="inspNumCuotas">57 cuotas + ajuste</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tech-sheet">
+              <div class="ts-head"><span>FICHA TÉCNICA</span><span class="corner-badge hidden" id="inspCornerBadge">ESQUINERO</span></div>
+              <div class="ts-row"><span>Referencia</span><strong id="tsRef">—</strong></div>
+              <div class="ts-row"><span>Perímetro</span><strong id="tsPerim">—</strong></div>
+              <div class="ts-row"><span>Frente × Fondo</span><strong id="tsFrenteFondo">—</strong></div>
+              <div class="ts-row"><span>Coordenadas GPS</span><strong id="tsGps">—</strong></div>
+              <div class="ts-row"><span>Colinda Norte</span><strong id="tsNorte">—</strong></div>
+              <div class="ts-row"><span>Colinda Sur</span><strong id="tsSur">—</strong></div>
+              <div class="ts-row"><span>Colinda Oriente</span><strong id="tsOriente">—</strong></div>
+              <div class="ts-row"><span>Colinda Occidente</span><strong id="tsOccidente">—</strong></div>
+              <p class="ts-note">Medidas, coordenadas y linderos son aproximados: se derivan de la geometría del plano PDF (el área m² es la oficial del cuadro de áreas).</p>
+              <button type="button" class="btn btn-ghost btn-sm btn-block" id="btnShareLot" style="margin-top:8px">🔗 Copiar enlace de este lote</button>
+              <details class="admin-box" id="adminBox">
+                <summary>Control administrativo (estado del lote)</summary>
+                <div class="admin-row">
+                  <input type="password" id="adminTokenInput" placeholder="Token" autocomplete="off" />
+                  <button type="button" class="btn btn-outline btn-xs" id="btnAdminValidate">Validar</button>
+                </div>
+                <div class="admin-row hidden" id="adminActions">
+                  <button type="button" class="btn btn-outline btn-xs" id="btnMarkAvailable">Disponible</button>
+                  <button type="button" class="btn btn-outline btn-xs" id="btnMarkSold">Vendido</button>
+                  <button type="button" class="btn btn-ghost btn-xs" id="btnClearOverride">Restaurar Excel</button>
+                </div>
+                <p class="admin-msg" id="adminMsg">Los cambios se guardan solo en este navegador.</p>
+              </details>
+            </div>
+
+            <!-- Technical DOM Attributes Preview (proving polygon attributes) -->
+            <details class="dom-attrs-Accordion">
+              <summary>Ver atributos técnicos del polígono SVG</summary>
+              <pre id="inspDomAttrsPreview" class="dom-code-box"></pre>
+            </details>
+
+            <div class="id-actions">
+              <button type="button" class="btn btn-primary btn-block" id="btnLoadIntoCalculator">
+                🧮 Abrir en Calculadora Financiera
+              </button>
+              <div class="id-actions-split">
+                <button type="button" class="btn btn-outline btn-sm" id="btnToggleCartLot">
+                  ➕ Agregar a Comparador
+                </button>
+                <a href="#" target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm" id="btnWhatsappLot">
+                  💬 Consultar Lote
+                </a>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       EVERIA-STYLE INTERACTIVE FINANCIAL CALCULATOR SECTION
+  ====================================================================== -->
+  <section class="calculator-section no-print" id="calculadora">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="section-kicker">SIMULADOR INTERACTIVO DE INVERSIÓN · ESTILO EVERIA</span>
+        <h2 class="section-title">Calculadora Dinámica de Terreno y Financiación</h2>
+        <p class="section-desc">
+          Calcula automáticamente el valor exacto según los metros cuadrados del lote seleccionado (base <strong>90 m² = $30.000.000 financiado / $25.000.000 de contado</strong>), personaliza tu cuota inicial desde <strong>$10.000.000</strong> y genera tu cronograma completo de cuotas fijas sin intereses.
+        </p>
+      </div>
+
+      <div class="calc-grid">
+        <!-- Left Column: Interactive Controls -->
+        <div class="calc-card calc-inputs-card">
+          <div class="calc-source-tabs">
+            <button type="button" class="cs-tab active" data-calc-source="lot" id="tabCalcByLot">
+              📍 Por Lote del Plano
+            </button>
+            <button type="button" class="cs-tab" data-calc-source="custom" id="tabCalcCustomArea">
+              📐 Simulación Libre por Área (m²)
+            </button>
+          </div>
+
+          <!-- Lot Selector Row -->
+          <div class="calc-source-box" id="calcLotSelectorBox">
+            <div class="form-row-2">
+              <div class="form-group">
+                <label for="calcManzanaSelect">Manzana</label>
+                <select id="calcManzanaSelect" class="form-control"></select>
+              </div>
+              <div class="form-group">
+                <label for="calcLoteSelect">Lote</label>
+                <select id="calcLoteSelect" class="form-control"></select>
+              </div>
+            </div>
+            <div class="selected-lot-banner" id="calcSelectedBanner">
+              <div>
+                <strong id="calcBannerTitle">Manzana 1 · Lote 17</strong>
+                <span id="calcBannerSub">Área oficial: 90 m² (6m × 15m)</span>
+              </div>
+              <button type="button" class="btn-link-map" id="btnFocusSelectedOnMap">Ver en el plano ↗</button>
+            </div>
+          </div>
+
+          <!-- Custom Area Slider Box -->
+          <div class="calc-source-box hidden" id="calcCustomAreaBox">
+            <div class="slider-header">
+              <label for="customAreaInput">Área del Terreno a Cotizar (m²)</label>
+              <div class="number-input-wrap">
+                <input type="number" id="customAreaInput" min="50" max="2000" step="1" value="90" />
+                <span>m²</span>
+              </div>
+            </div>
+            <input type="range" id="customAreaSlider" min="54" max="500" step="1" value="90" class="styled-slider" />
+            <div class="preset-chips">
+              <button type="button" class="preset-chip active" data-area-preset="90">90 m² (Estándar)</button>
+              <button type="button" class="preset-chip" data-area-preset="105">105 m² (Esquinero)</button>
+              <button type="button" class="preset-chip" data-area-preset="122">122 m²</button>
+              <button type="button" class="preset-chip" data-area-preset="180">180 m² (2 Lotes)</button>
+              <button type="button" class="preset-chip" data-area-preset="1000">1.000 m² (Super Lote)</button>
+            </div>
+          </div>
+
+          <hr class="calc-divider" />
+
+          <!-- Payment Mode Switch: Financiado vs Contado -->
+          <div class="form-group">
+            <label>Modalidad de Compra</label>
+            <div class="payment-mode-toggle">
+              <button type="button" class="pm-btn active" data-pay-mode="financiado" id="btnPayFinanciado">
+                <span class="pm-title">📅 Financiado Directo</span>
+                <span class="pm-sub">0% Interés · $333.333/m²</span>
+              </button>
+              <button type="button" class="pm-btn" data-pay-mode="contado" id="btnPayContado">
+                <span class="pm-title">💎 Pago de Contado</span>
+                <span class="pm-sub">Ahorra 16,67% · $277.778/m²</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Financing Parameters (Visible in Financiado Mode) -->
+          <div id="financingControlsWrap">
+            <!-- Cuota Inicial -->
+            <div class="slider-group">
+              <div class="slider-header">
+                <label for="calcInicialInput">Cuota Inicial (base oficial $10.000.000)<span class="pct-readout" id="calcInicialPct"></span></label>
+                <div class="currency-input-wrap">
+                  <span>$</span>
+                  <input type="number" id="calcInicialInput" step="500000" min="1000000" value="10000000" />
+                </div>
+              </div>
+              <input type="range" id="calcInicialSlider" min="5000000" max="28000000" step="500000" value="10000000" class="styled-slider" />
+              <div class="slider-hints">
+                <span>Separación + Inicial</span>
+                <button type="button" class="reset-inline-btn" id="btnResetOfficialTerms">Restaurar estándar ($10M / $350k)</button>
+              </div>
+            </div>
+
+            <!-- Separation Split Option -->
+            <div class="form-row-2 compact-row">
+              <div class="form-group">
+                <label for="calcSeparacionInput">Con cuánto separas hoy</label>
+                <select id="calcSeparacionInput" class="form-control">
+                  <option value="1000000" selected>$1.000.000 COP</option>
+                  <option value="2000000">$2.000.000 COP</option>
+                  <option value="5000000">$5.000.000 COP</option>
+                  <option value="10000000">Pago total de la Inicial</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="calcPlazoInicialSelect">Plazo resto Cuota Inicial</label>
+                <select id="calcPlazoInicialSelect" class="form-control">
+                  <option value="1" selected>1 mes (Contado inicial)</option>
+                  <option value="2">2 cuotas mensuales</option>
+                  <option value="3">3 cuotas mensuales</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Calculation Driver: Fixed Installment ($350,000) vs Custom Months -->
+            <div class="form-group">
+              <label>Cómo deseas calcular el saldo</label>
+              <div class="calc-driver-tabs">
+                <button type="button" class="cd-btn active" data-driver="cuota" id="btnDriverCuota">Por Valor de Cuota ($350.000)</button>
+                <button type="button" class="cd-btn" data-driver="plazo" id="btnDriverPlazo">Por Número de Meses</button>
+              </div>
+            </div>
+
+            <!-- Driver A: Fixed Monthly Installment -->
+            <div class="slider-group" id="driverCuotaBox">
+              <div class="slider-header">
+                <label for="calcCuotaInput">Cuota Fija Mensual (Sin intereses)</label>
+                <div class="currency-input-wrap">
+                  <span>$</span>
+                  <input type="number" id="calcCuotaInput" step="50000" min="250000" value="350000" />
+                </div>
+              </div>
+              <input type="range" id="calcCuotaSlider" min="350000" max="2000000" step="50000" value="350000" class="styled-slider" />
+              <div class="preset-chips">
+                <button type="button" class="preset-chip active" data-cuota-preset="350000">$350.000 (Oficial)</button>
+                <button type="button" class="preset-chip" data-cuota-preset="500000">$500.000</button>
+                <button type="button" class="preset-chip" data-cuota-preset="750000">$750.000</button>
+                <button type="button" class="preset-chip" data-cuota-preset="1000000">$1.000.000</button>
+              </div>
+            </div>
+
+            <!-- Driver B: Number of Months -->
+            <div class="slider-group hidden" id="driverPlazoBox">
+              <div class="slider-header">
+                <label for="calcMesesInput">Plazo de Financiación (Meses)</label>
+                <div class="number-input-wrap">
+                  <input type="number" id="calcMesesInput" min="6" max="72" step="1" value="57" />
+                  <span>meses</span>
+                </div>
+              </div>
+              <input type="range" id="calcMesesSlider" min="6" max="72" step="1" value="57" class="styled-slider" />
+              <div class="preset-chips">
+                <button type="button" class="preset-chip" data-meses-preset="12">12 meses</button>
+                <button type="button" class="preset-chip" data-meses-preset="24">24 meses</button>
+                <button type="button" class="preset-chip" data-meses-preset="36">36 meses</button>
+                <button type="button" class="preset-chip" data-meses-preset="48">48 meses</button>
+                <button type="button" class="preset-chip active" data-meses-preset="57">57 meses</button>
+              </div>
+            </div>
+
+            <!-- Optional Extra Annual / Semestral Payment -->
+            <div class="form-group extra-abono-box">
+              <div class="slider-header">
+                <label for="calcAbonoSemestral">Abono Extra Semestral Opcional (Primas Jun/Dic)</label>
+                <select id="calcAbonoSemestral" class="form-control form-control-sm">
+                  <option value="0" selected>Sin abonos extras ($0)</option>
+                  <option value="500000">$500.000 cada 6 meses</option>
+                  <option value="1000000">$1.000.000 cada 6 meses</option>
+                  <option value="2000000">$2.000.000 cada 6 meses</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Live Financial Summary + Amortization Schedule -->
+        <div class="calc-card calc-results-card">
+          <div class="cr-header">
+            <div>
+              <span class="cr-kicker" id="resHeaderKicker">COTIZACIÓN EN TIEMPO REAL · PENTECOSTÉS</span>
+              <h3 class="cr-title" id="resHeaderTitle">Manzana 1 · Lote 17 (90 m²)</h3>
+            </div>
+            <span class="pill pill-emerald" id="resZeroInterestBadge">0% Interés E.A.</span>
+          </div>
+
+          <!-- Big Hero Numbers -->
+          <div class="cr-hero-metrics">
+            <div class="cr-main-price-box">
+              <span class="crm-label" id="resTotalLabel">Valor Total Financiado</span>
+              <div class="crm-value" id="resTotalValue">$30.000.000</div>
+              <span class="crm-formula" id="resFormulaText">90 m² × $333.333 / m²</span>
+            </div>
+            <div class="cr-monthly-box" id="resMonthlyHighlightBox">
+              <span class="crm-label" id="resMonthlyLabel">Cuota Fija Mensual</span>
+              <div class="crm-value text-emerald" id="resMonthlyValue">$350.000</div>
+              <span class="crm-formula" id="resInstallmentsText">57 cuotas + ajuste final de $50.000</span>
+            </div>
+          </div>
+
+          <!-- Visual Breakdown Bar -->
+          <div class="cr-visual-bar-wrap">
+            <div class="cr-bar-labels">
+              <span id="barLblInicial">Cuota Inicial (33,3%)</span>
+              <span id="barLblSaldo">Saldo Financiado (66,7%)</span>
+            </div>
+            <div class="cr-stacked-bar">
+              <div class="cr-seg-inicial" id="barSegInicial" style="width: 33.3%"></div>
+              <div class="cr-seg-saldo" id="barSegSaldo" style="width: 66.7%"></div>
+            </div>
+          </div>
+
+          <!-- Detailed Financial Summary Table -->
+          <div class="cr-summary-list">
+            <div class="crs-row">
+              <span>Precio si compras de Contado hoy:</span>
+              <strong id="resContadoRef">$25.000.000 COP</strong>
+            </div>
+            <div class="crs-row highlight-savings">
+              <span>Ahorro por Pago de Contado:</span>
+              <strong id="resAhorroRef">$5.000.000 COP (16,7%)</strong>
+            </div>
+            <div class="crs-row">
+              <span>Separación Inmediata:</span>
+              <strong id="resSeparacionVal">$2.000.000 COP</strong>
+            </div>
+            <div class="crs-row">
+              <span>Completar Cuota Inicial:</span>
+              <strong id="resRestoInicialVal">$8.000.000 COP (en 1 pago)</strong>
+            </div>
+            <div class="crs-row">
+              <span>Saldo Neto a Financiar (0% interés):</span>
+              <strong id="resSaldoNetoVal">$20.000.000 COP</strong>
+            </div>
+            <div class="crs-row">
+              <span>Fecha Estimada Última Cuota:</span>
+              <strong id="resEndDateVal">Agosto 2031 (~4,8 años)</strong>
+            </div>
+          </div>
+
+          <!-- Everia-style reconciliation box -->
+          <div class="mint-reconcile" id="mintReconcile">
+            <div class="mr-title">Suman el valor del lote <span class="mr-check" id="mrCheck">✓</span></div>
+            <div class="mr-row"><span>Separación (dentro de la inicial)</span><strong id="mrSep">—</strong></div>
+            <div class="mr-row"><span id="mrRestoLbl">Saldo de la inicial, 30 días</span><strong id="mrResto">—</strong></div>
+            <div class="mr-row"><span id="mrCuotasLbl">Las cuotas, juntas</span><strong id="mrCuotas">—</strong></div>
+            <div class="mr-total"><span>Total del lote</span><strong id="mrTotal">—</strong></div>
+            <p class="mr-note" id="mrNote">Sin intereses ni cobros adicionales: la suma de los pagos es exactamente el valor del lote.</p>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="cr-cta-buttons">
+            <a href="#" target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg" id="btnCalcWhatsapp">
+              <span>💬 Reservar / Enviar Cotización por WhatsApp</span>
+            </a>
+            <button type="button" class="btn btn-outline btn-lg" id="btnPrintQuote">
+              <span>🖨️ Imprimir / Guardar PDF Formal</span>
+            </button>
+          </div>
+
+          <!-- Collapsible Monthly Payment Schedule -->
+          <details class="schedule-accordion" id="scheduleAccordion">
+            <summary>
+              <span>📋 Ver Cronograma Detallado de Pagos Mes a Mes</span>
+              <strong id="scheduleCountBadge">59 pagos</strong>
+            </summary>
+            <div class="schedule-table-wrap">
+              <table class="schedule-table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Concepto</th>
+                    <th>Fecha Est.</th>
+                    <th>Valor Pago</th>
+                    <th>Saldo Restante</th>
+                  </tr>
+                </thead>
+                <tbody id="scheduleTableBody"></tbody>
+              </table>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       MANZANA HEATMAP CARDS & LIVE INVENTORY TABLE
+  ====================================================================== -->
+  <section class="inventory-section no-print" id="manzanas-resumen">
+    <div class="container">
+      <div class="section-header-flex">
+        <div>
+          <span class="section-kicker">INVENTARIO OFICIAL SINCRONIZADO CON EXCEL</span>
+          <h2 class="section-title">Disponibilidad por Manzana y Buscador Tabular</h2>
+        </div>
+        <div class="inv-header-actions">
+          <button type="button" class="btn btn-ghost btn-sm" id="btnExportFilteredCsv">
+            ⬇️ Exportar Vista CSV
+          </button>
+        </div>
+      </div>
+
+      <!-- 28 Manzanas + Super Lotes Overview Grid -->
+      <div class="manzanas-grid" id="manzanasCardsGrid"></div>
+
+      <!-- Searchable Inventory Table -->
+      <div class="inventory-table-card">
+        <div class="itc-toolbar">
+          <input type="text" id="tableSearchInput" class="form-control" placeholder="Filtrar tabla por código (MZ01-L17), manzana, área o estado..." />
+          <select id="tableStatusFilter" class="form-control">
+            <option value="COTIZABLES" selected>Mostrar Cotizables: Disponibles + Liberados (119)</option>
+            <option value="DISPONIBLE">Solo Disponibles Vacíos en Excel (24)</option>
+            <option value="LIBERADO">Solo Liberados: Cláusula / Devolución (95)</option>
+            <option value="PROCESO">En Trámite / Separados / Cesión (25)</option>
+            <option value="VENDIDO">Vendidos (695)</option>
+            <option value="ALL">Todo el Inventario (839)</option>
+          </select>
+          <span class="itc-count" id="tableResultCount">Mostrando 119 lotes</span>
+        </div>
+
+        <div class="table-responsive">
+          <table class="inv-table">
+            <thead>
+              <tr>
+                <th>Código</th>
+                <th>Manzana</th>
+                <th>Lote</th>
+                <th>Área (m²)</th>
+                <th>Estado Plano</th>
+                <th>Detalle Excel</th>
+                <th>Precio Contado</th>
+                <th>Precio Financiado</th>
+                <th>Cuota / Mes</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="inventoryTableBody"></tbody>
+          </table>
+        </div>
+        <div class="itc-pagination" id="tablePagination"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       INVERSORA MARUZ S.A.S. ECOSYSTEM & PORTFOLIO CONTEXT
+  ====================================================================== -->
+  <section class="ecosystem-section no-print" id="ecosistema-maruz">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="section-kicker">ATLAS · INVERSORA MARUZ S.A.S.</span>
+        <h2 class="section-title">21 proyectos en Casanare</h2>
+        <p class="section-desc">
+          Ubicación, cuotas partes y áreas según el listado oficial de proyectos, con las ofertas comerciales del inventario. Los proyectos sin oferta cargada aparecen como «Consultar».
+        </p>
+      </div>
+
+      <div class="atlas-grid">
+        <aside class="atlas-index">
+          <div class="atlas-kpis">
+            <div class="atlas-kpi"><strong id="atlasKpiProj">21</strong><span>Proyectos</span></div>
+            <div class="atlas-kpi"><strong id="atlasKpiCp">20.309</strong><span>Cuotas partes</span></div>
+            <div class="atlas-kpi"><strong>Casanare</strong><span>Entorno de Yopal</span></div>
+          </div>
+          <input type="text" id="atlasSearch" class="form-control" placeholder="Buscar proyecto o vereda" autocomplete="off" />
+          <div class="atlas-tabs">
+            <button type="button" class="eco-tab active" data-atlas-cat="ALL">Todos</button>
+            <button type="button" class="eco-tab" data-atlas-cat="Terrenos">Terrenos</button>
+            <button type="button" class="eco-tab" data-atlas-cat="Parcelas y campestres">Parcelas y campestres</button>
+          </div>
+          <div class="atlas-list" id="atlasList"></div>
+        </aside>
+        <div class="atlas-map-card">
+          <svg id="atlasSvg" viewBox="0 0 600 560" role="img" aria-label="Posición relativa de los 21 proyectos de Inversora Maruz"></svg>
+          <p class="atlas-caption">Posiciones calculadas con las coordenadas del listado oficial (proyección simple, sin cartografía base).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <dialog class="dossier no-print" id="projectDossier" aria-labelledby="dossierTitle">
+    <div id="dossierContent"></div>
+  </dialog>
+
+  <!-- =====================================================================
+       REAL GPS SATELLITE LOCATION SECTION
+  ====================================================================== -->
+  <section class="location-section no-print" id="ubicacion-gps">
+    <div class="container location-grid">
+      <div class="location-info">
+        <span class="section-kicker">UBICACIÓN SEGÚN LISTADO OFICIAL</span>
+        <h2 class="section-title">San Rafael de Morichal · Casanare</h2>
+        <p>
+          Pentecostés está registrado en el listado oficial de proyectos de Inversora Maruz en la vereda <strong>San Rafael de Morichal</strong>, con <strong>841 cuotas partes</strong>, la mayoría de <strong>90 m² (6 × 15 m)</strong>. Coordenadas: <code>5°14'36.24"N · 72°24'35.74"O</code>.
+        </p>
+
+        <div class="loc-features">
+          <div class="loc-feat">
+            <span class="lf-icon">🗺️</span>
+            <div>
+              <strong>839 polígonos en el plano</strong>
+              <p>28 manzanas con numeración propia y 17 super lotes (715 a 1.470 m²), vectorizados desde el plano PDF del proyecto.</p>
+            </div>
+          </div>
+          <div class="loc-feat">
+            <span class="lf-icon">📐</span>
+            <div>
+              <strong>El plano PDF es la referencia</strong>
+              <p>Las áreas son las del cuadro de áreas del plano. Según el expediente del proyecto, la zona baja junto al río pudo variar y las cuotas mayores a 2.000 m² pudieron subdividirse.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="loc-actions">
+          <a href="https://www.google.com/maps?q=5.243400,-72.409928" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+            📍 Abrir coordenadas en Google Maps
+          </a>
+        </div>
+      </div>
+
+      <div class="location-map-card">
+        <div class="gps-card-head">
+          <span>Polígono Perimetral Georreferenciado (MARUZ PROYECTOS.kmz)</span>
+          <code>5.243400, -72.409928</code>
+        </div>
+        <div class="gps-svg-preview-wrap">
+          <svg id="kmlBoundarySvg" viewBox="0 0 600 420" class="kml-svg"></svg>
+          <div class="gps-overlay-caption">
+            <span>Perímetro Satelital Real · 83 vértices KML verificados · San Rafael de Morichal</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer no-print">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="assets/logo-pentecostes-white.png" alt="Urbanización Pentecostés" class="footer-logo" /> <img src="assets/logo-maruz-white.png" alt="Maruz Inversora" class="footer-logo" style="margin-left:18px" />
+        <p>Urbanización Pentecostés · <strong>Inversora Maruz S.A.S.</strong></p>
+      </div>
+      <div class="footer-contact">
+        <h4>Contacto</h4>
+        <p id="footerOffice">Vereda San Rafael de Morichal, Casanare (5°14'36.24"N 72°24'35.74"O)</p>
+        <p id="footerWa"></p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2026 Inversora Maruz S.A.S. · Valores y disponibilidad sujetos a validación comercial.</span>
+    </div>
+  </footer><!-- Formal Printable Quotation Sheet (Visible ONLY when printing / saving PDF) -->
+  <section class="print-quote-sheet only-print" id="printQuoteSheet">
+    <div class="pq-header">
+      <img src="assets/logo-pentecostes.png" alt="Logo Pentecostés" class="pq-logo" />
+      <div class="pq-company">
+        <h1>COTIZACIÓN OFICIAL DE TERRENO</h1>
+        <p><strong>URBANIZACIÓN PENTECOSTÉS · INVERSORA MARUZ S.A.S.</strong></p>
+        <p id="pqContactLine">Vereda San Rafael de Morichal, Casanare</p>
+      </div>
+      <div class="pq-meta">
+        <div id="pqDate">Fecha: --</div>
+        <div id="pqRef">Ref: --</div>
+      </div>
+    </div>
+    <hr />
+    <div class="pq-body" id="pqBodyContent"></div>
+    <div class="pq-footer">
+      <p>Cotización informativa generada en el Visor Oficial de Urbanización Pentecostés. Financiación directa 0% interés sujeta a validación de disponibilidad inmediata en sala de ventas de Inversora Maruz S.A.S.</p>
+    </div>
+  </section>
+
+  <script src="assets/site-config.js"></script>
+  <script src="assets/pentecostes-data.js"></script>
+  <script src="assets/atlas-data.js"></script>
+  <script src="assets/map-engine.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

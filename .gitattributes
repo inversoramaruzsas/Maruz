@@ -1,2 +1,10 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Explicit binary assets
+*.mp4 binary
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.woff2 binary
+*.pdf binary
